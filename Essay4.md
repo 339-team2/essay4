@@ -8,3 +8,22 @@ Appsmith Characteristics we studied:
 - Modifiability
 - Performance
 - Configurability
+
+How MIT App Inventor compares to Appsmith regarding modifiablity
+
+// TODO
+
+
+How MIT App Inventor compares to Appsmith regarding Performance
+
+// TODO
+
+
+How MIT App Inventor compares to Appsmith regarding Configurability
+
+// TODO
+
+
+What MIT App Inventor does well or poorly outside the three characteristics
+
+// TODO
