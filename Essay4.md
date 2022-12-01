@@ -21,10 +21,8 @@ How MIT App Inventor compares to Appsmith regarding modifiablity
 
 // TODO
 
-
-How MIT App Inventor compares to Appsmith regarding Performance
-
-// TODO
+Performance
+From the community discussion, we discovered that MIT App Inventor really struggles when it comes to trying to create larger applications through their app. This is obviously a trivial issue, but the issue never seemed to get fixed even though the community knows the driving problem. The problem occurs when too many blocks are on the screen at the same time. The number of blocks seems to be right around 5,500 and any more than that, the performance really trails off. Within the Github repo, they do not even have any issues related to performance which is very much so different from Appsmith where they took performance very seriously and had over 90 issues open that were directly related to performance. Within a discussion regarding MIT App Inventor's performance, one of the main contributors was quoted saying, "We don't have any concrete plans to work on the blocks editor performance at this time".
 
 
 How MIT App Inventor compares to Appsmith regarding Configurability
