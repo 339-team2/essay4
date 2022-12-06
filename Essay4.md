@@ -9,6 +9,14 @@ Introduction
 Nowadays, we interact with apps on a daily basis. Since it's something so common, a lot of people may want to create an app of their own, however they may not have the requierd coding knowledge to create apps on tools such as AndroidStudio. Thankfully, there are open source projects available to help people with none to little coding experience to create the app of their dreams. First, there's [**Appsmith**](https://github.com/appsmithorg/appsmith), which we have been analyzing this semester, and another tool that is avaliable to develop apps is [**MIT App Inventor**](https://github.com/mit-cml/appinventor-sources). 
 
 Even though the basic concept of these programs are similar, the audience for them are very different. MIT App Inventor is targeted towards people (mostly K-12) who want to get into coding and learn the basics. The interface of this IDE is similar to [Scratch](https://github.com/LLK/) where you can drag and drop blocks of code that connect with eachother. 
+Appsmith on the other hand, is targetted towards businesses, or large scale programming projects. Appsmith documentation has specific annotations and sections in their documentation for their business version of their product. ![image](https://user-images.githubusercontent.com/26784780/205792540-c923b6fa-81b0-4b0c-934a-b6abf70887f7.png)
+
+One of the open issues in the appsmith-docs repository is about refining the installation documentation to be more concise so that it is easier to add to the business portal for their paying customers.
+
+Appsmith is a company that makes money off of their product, and has a large team dedicated to it's success. It additionally is open source, allowing for community contribution. However the main contributors are fulltime staff.
+AppInventor is a small nonprofit project from MIT, and solely relies on open source contributions for it's code.
+With this, it makes sense that there will be large differences in the quality of code, architecture, and scale between the two projects.
+In this essay, we are going to compare these two projects on their architectural characteristics.
 
 // Needs a little more work...
 
