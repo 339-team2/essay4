@@ -31,8 +31,7 @@ How MIT App Inventor compares to Appsmith regarding Configurability
 
 
 What MIT App Inventor does well or poorly outside the three characteristics
-
-// TODO
-
+Compared to Appsmith, MIT app inventor is much more lightweight and easier for a beginner to use. This leads to a very user-friendly interface that allows for apps to be created very fast and efficient. This is because MIT app inventor has drag-and-drop features that keep it simple and easy to use, but not as many as appsmith. While this keeps it simple, it also makes it more inefficient for large projects. Because of its simplicity, MIT app inventor excels at usability.
+MIT App Inventor doens't do too poorly in documentation for developers, however it is very difficult to find anything about the structure of the app. They excel at documentation when it comes to setting up the environment, compiling it, and running the tests. MIT App invnetor also does well at keeping javadocs to document each individual component, however they have very little documentation about how components work together. Overall, these factors may end up causing newer developers to be unsure of how to go about solving an issue, having a negative impact on their maintainability.
 Conclusion 
 // TODO
