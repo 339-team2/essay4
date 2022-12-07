@@ -27,8 +27,9 @@ With this, it makes sense that there will be large differences in the quality of
   
   As an example, MIT App Inventor uses [Blockly](https://developers.google.com/blockly/) to let their users attach events and create functions in their [Block Editor](http://ai2.appinventor.mit.edu/reference/blocks/). MIT App Inventor's codebase has all the Block Editor functionality within a signle module. This is advantageous for modifiability because all implementations and logic regarding blocks are grouped together in a single module, which signifies an increased cohesion. More importantly, a developer who desires to contribute to the app's Block Editor will only have to make changes inside its folder. This was evident when their team added a "join-with-separator block" in their app. As seen in this [pull request](https://github.com/mit-cml/appinventor-sources/commit/ceb27bf233d93e61ef741e9255149e1bb3e8ff8c), almost all changes are inside the appinventor/blocklyeditor directory. However, App Inventor has coupling issues with its codebase as well. This [issue](https://github.com/mit-cml/appinventor-sources/issues/1997) explains the tight coupling between Project-related functionalities in their codebase, which was solved by refactoring to a closer "model-view-control separation of concerns."
   
-  Appsmith also uses the microkernel (plug-in) pattern. 
+  Appsmith also uses the microkernel (plug-in) pattern. As a project that should constantly evolve as the needs of their customers change, it is important for Appsmith to allow easy integration of new features. And of course, Appsmith does a good job in this area. Developers, who both contribute to the app and use it, can easily request/add new plugin features in the open-source project. There are even [guidelines](https://github.com/appsmithorg/appsmith/blob/release/contributions/ServerCodeContributionsGuidelines/PluginCodeContributionsGuidelines.md) on how to contribute to plugin code. These detailed guidelines prove how well-structured is the Appsmith's plugin software pattern. 
 
+  Overall, both projects effectively utilize the microkernel pattern to improve the modifiability of their codebase. The projects mostly differ with their module structures. Appsmith's codebase and customers are larger and more business-oriented than MIT App Inventor, so Appsmith will naturally want their architecture to be as good as possible—exhibiting loose coupling and high cohesion. Appsmith also has a larger contributors population. But still, MIT App Inventor has some good points with its modular architecture.
 
 ### Performance
   
@@ -68,7 +69,9 @@ For an example, recently there was a commit to AppInventor to add a "Delete Acco
 
 
 ## What MIT App Inventor does well or poorly outside the three characteristics?
+
 Compared to Appsmith, MIT app inventor is much more lightweight and easier for a beginner to use. This leads to a very user-friendly interface that allows for apps to be created very fast and efficient. This is because MIT app inventor has drag-and-drop features that keep it simple and easy to use, but not as many as appsmith. While this keeps it simple, it also makes it more inefficient for large projects. Because of its simplicity, MIT app inventor excels at usability.
+
 MIT App Inventor doens't do too poorly in documentation for developers, however it is very difficult to find anything about the structure of the app. They excel at documentation when it comes to setting up the environment, compiling it, and running the tests. MIT App invnetor also does well at keeping javadocs to document each individual component, however they have very little documentation about how components work together. Overall, these factors may end up causing newer developers to be unsure of how to go about solving an issue, having a negative impact on their maintainability.
 
 ## Conclusion 
