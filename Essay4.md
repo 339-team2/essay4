@@ -2,55 +2,63 @@
 <p align="center"><b><font size = 5>Essay 4</font></b></p>
 
 <!-- Title of our essay -->
-<p align="center">Appsmith's vs MIT App Inventor's Architecture Characteristics</p>
+# <p align="center">Appsmith vs. MIT App Inventor's Architecture Characteristics</p>
 
-Introduction
+### Introduction
 
-Nowadays, we interact with apps on a daily basis. Since it's something so common, a lot of people may want to create an app of their own, however they may not have the required coding knowledge to create apps on tools such as AndroidStudio. Thankfully, there are open source projects available to help people with none to little coding experience to create the app of their dreams. First, there's [**Appsmith**](https://github.com/appsmithorg/appsmith), which we have been analyzing this semester, and another tool that is avaliable to develop apps is [**MIT App Inventor**](https://github.com/mit-cml/appinventor-sources). 
+  Nowadays, we interact with apps on a daily basis. Since it's something so common, a lot of people may want to create an app of their own, however they may not have the required coding knowledge to create apps on tools such as AndroidStudio. Thankfully, there are open source projects available to help people with none to little coding experience to create the app of their dreams. First, there's [**Appsmith**](https://github.com/appsmithorg/appsmith), which we have been analyzing this semester, and another tool that is avaliable to develop apps is [**MIT App Inventor**](https://github.com/mit-cml/appinventor-sources). 
 
-Even though the basic concept of these programs are similar, the audience for them are very different. MIT App Inventor is targeted towards people (mostly K-12) who want to get into coding and learn the basics. The interface of this IDE is similar to [Scratch](https://github.com/LLK/) where you can drag and drop blocks of code that connect with eachother. 
-Appsmith on the other hand, is targetted towards businesses, or large scale programming projects. Appsmith documentation has specific annotations and sections in their documentation for their business version of their product. ![image](https://user-images.githubusercontent.com/26784780/205792540-c923b6fa-81b0-4b0c-934a-b6abf70887f7.png)
+  Even though the basic concept of these programs are similar, the audience for them are very different. MIT App Inventor is targeted towards people (mostly K-12) who want to get into coding and learn the basics. The interface of this IDE is similar to [Scratch](https://github.com/LLK/) where you can drag and drop blocks of code that connect with eachother. This web tool allows a user to create their own UI with different components such as buttons and attach events to them. 
 
-One of the open issues in the appsmith-docs repository is about refining the installation documentation to be more concise so that it is easier to add to the business portal for their paying customers.
+  Appsmith, on the other hand, is targeted towards businesses or large scale software projects. Appsmith documentation has specific annotations and sections in their documentation for the business version of their product. 
+  
+  ![image](https://user-images.githubusercontent.com/26784780/205792540-c923b6fa-81b0-4b0c-934a-b6abf70887f7.png)
 
-Appsmith is a company that makes money off of their product, and has a large team dedicated to it's success. It additionally is open source, allowing for community contribution. However the main contributors are fulltime staff.
+  Appsmith is a company that makes money off of their product, and has a large team dedicated to it's success. It additionally is open source, allowing for community contribution. However the main contributors are fulltime staff.
 AppInventor is a small nonprofit project from MIT, and solely relies on open source contributions for it's code.
 With this, it makes sense that there will be large differences in the quality of code, architecture, and scale between the two projects.
-In this essay, we are going to compare these two projects on their architectural characteristics.
 
-// Needs a little more work...
+## How does MIT App Inventor compares to Appsmith?
+  The following sections will cover similarities and differences between Appsmith and MIT App Inventor's architectural charactersitics of modifiability, performance, and configurability.
 
-Appsmith Characteristics we studied:
-- Modifiability
-- Performance
-- Configurability
-
-How MIT App Inventor compares to Appsmith regarding modifiablity
-
-// TODO
-
-Performance
-From the community discussion, we discovered that MIT App Inventor really struggles when it comes to trying to create larger applications through their app. This is obviously a trivial issue, but the issue never seemed to get fixed even though the community knows the driving problem. The problem occurs when too many blocks are on the screen at the same time. The number of blocks seems to be right around 5,500 and any more than that, the performance really trails off. Within the Github repo, they do not even have any issues related to performance which is very much so different from Appsmith where they took performance very seriously and had over 90 issues open that were directly related to performance. Within a discussion regarding MIT App Inventor's performance, one of the main contributors was quoted saying, "We don't have any concrete plans to work on the blocks editor performance at this time" [**Discussion Link**](https://community.appinventor.mit.edu/t/performance-on-big-number-of-blocks-project/4995/12). This seems reasonable because MIT App Inventor seems to be targeted more towards education and learning whereas Appsmith is more directed towards more serious projects. There was only one other mention of performance issues anywhere within the Github and the discussion forum. This other issue occured when installing a created application and not having TimerAlwaysFires set to false. When TimerAlwaysFires is set to true, it constantly tries creating new screens which leads the app to saying, "application has stopped" then, "this application reduces the performance of your device". 
+### Modifiability
+  
+  MIT App Inventor's codebase mostly uses the microkernel (plug-in) pattern. The web app consists of features that integrate and utilize different libraries and other projects suchs as Google's Blockly and App Engine. 
+  
+  As an example, MIT App Inventor uses [Blockly](https://developers.google.com/blockly/) to let their users attach events and create functions in their [Block Editor](http://ai2.appinventor.mit.edu/reference/blocks/). MIT App Inventor's codebase has all the Block Editor functionality within a signle module. This is advantageous for modifiability because all implementations and logic regarding blocks are grouped together in a single module, which signifies an increased cohesion. More importantly, a developer who desires to contribute to the app's Block Editor will only have to make changes inside its folder. This was evident when their team added a "join-with-separator block" in their app. As seen in this [pull request](https://github.com/mit-cml/appinventor-sources/commit/ceb27bf233d93e61ef741e9255149e1bb3e8ff8c), almost all changes are inside the appinventor/blocklyeditor directory. However, App Inventor has coupling issues with its codebase as well. This [issue](https://github.com/mit-cml/appinventor-sources/issues/1997) explains the tight coupling between Project-related functionalities in their codebase, which was solved by refactoring to a closer "model-view-control separation of concerns."
+  
+  Appsmith also uses the microkernel (plug-in) pattern. 
 
 
-How MIT App Inventor compares to Appsmith regarding Configurability
+### Performance
+  
+  From the community discussion, we discovered that MIT App Inventor really struggles when it comes to trying to create larger applications through their app. This is obviously a trivial issue, but the issue never seemed to get fixed even though the community knows the driving problem. The problem occurs when too many blocks are on the screen at the same time. The number of blocks seems to be right around 5,500 and any more than that, the performance really trails off. 
+  
+  Within the Github repo, they do not even have any issues related to performance which is very much so different from Appsmith where they took performance very seriously and had over 90 issues open that were directly related to performance. Within a discussion regarding MIT App Inventor's performance, one of the main contributors was quoted saying, "We don't have any concrete plans to work on the blocks editor performance at this time" [**Discussion Link**](https://community.appinventor.mit.edu/t/performance-on-big-number-of-blocks-project/4995/12). This seems reasonable because MIT App Inventor seems to be targeted more towards education and learning whereas Appsmith is more directed towards more serious projects. 
+  
+  There was only one other mention of performance issues anywhere within the Github and the discussion forum. This other issue occured when installing a created application and not having TimerAlwaysFires set to false. When TimerAlwaysFires is set to true, it constantly tries creating new screens which leads the app to saying, "application has stopped" then, "this application reduces the performance of your device". 
 
-Appsmith and AppInventor both implement configurability, but in different levels.
+### Configurability
+ 
+ Appsmith and AppInventor both implement configurability, but in different levels.
 Appsmith provides hundreds of components that are all highly configurable. Appsmith allows you to configure size and placement of components, and edit the style and JavaScript code for each component.
-AppInventor is also configurable, but not to the same extent as Appsmith. AppInventor also allows you to configure the size and placement of your components, but not styles or the JavaScript code.
+  
+  AppInventor is also configurable, but not to the same extent as Appsmith. AppInventor also allows you to configure the size and placement of your components, but not styles or the JavaScript code.
 
-An example is the map component. 
-Appsmith allows you to change the border styles of the map, change size and placement on the app, connect to a database, add animations, enable various map settings, create markers, add onClick events, and more.
+An example is the map component. Appsmith allows you to change the border styles of the map, change size and placement on the app, connect to a database, add animations, enable various map settings, create markers, add onClick events, and more.
+
 ![image](https://user-images.githubusercontent.com/26784780/205799426-b63d786e-d296-4e6b-bace-0f5fd581e6e7.png)
+
 ![image](https://user-images.githubusercontent.com/26784780/205799539-eadf086c-971c-4768-afb6-a743d28b3a94.png)
 
 Appinventor allows you to change the size and placement on the app, customize zoom/pan settings, add a compass, and road/terrian/arial map views.
+
 ![image](https://user-images.githubusercontent.com/26784780/205799762-e7f01b21-211b-4dd1-b5f7-04d252808598.png)
 
 Both app creators are impressive, but there is a clear edge to Appsmith in terms of the level of configurability of their components.
 
-
 Appsmith's codebase is additionally highly configurable, making it very easy for contributors to add additional widgets and tools. Appsmith's codebase makes this easy due to being incredibly organized, and with amazing code structure. No component exists that doesn't inherit from a base class.
+
 Appsmith's codebase is organized in such a way that all of the backend portion of components are stored in the backend half of the repository, and all of the frontend components for the codebase is stored in the frontend half of it.
 Within the frontend or backend side, each widget has every image, test, and additional files stored within that widget's frontend or backend file.
 With this detailed organization, it is very easy to understand how to add new components, and what components will need to implement.
@@ -59,8 +67,9 @@ AppInventor's codebase is decently organized. They have folders containing their
 For an example, recently there was a commit to AppInventor to add a "Delete Account" button. However to add this functionality, multiple files in multiple sources needed to be modified, and is not a characteristic of a highly configurable system.
 
 
-What MIT App Inventor does well or poorly outside the three characteristics
+## What MIT App Inventor does well or poorly outside the three characteristics?
 Compared to Appsmith, MIT app inventor is much more lightweight and easier for a beginner to use. This leads to a very user-friendly interface that allows for apps to be created very fast and efficient. This is because MIT app inventor has drag-and-drop features that keep it simple and easy to use, but not as many as appsmith. While this keeps it simple, it also makes it more inefficient for large projects. Because of its simplicity, MIT app inventor excels at usability.
 MIT App Inventor doens't do too poorly in documentation for developers, however it is very difficult to find anything about the structure of the app. They excel at documentation when it comes to setting up the environment, compiling it, and running the tests. MIT App invnetor also does well at keeping javadocs to document each individual component, however they have very little documentation about how components work together. Overall, these factors may end up causing newer developers to be unsure of how to go about solving an issue, having a negative impact on their maintainability.
-Conclusion 
+
+## Conclusion 
 Ultimately, MIT App Inventor is not as performance driven as Appsmith, but does not really need to be as it thrives in smaller sized projects. 
